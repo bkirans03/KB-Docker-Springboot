@@ -1,14 +1,15 @@
 package com.stragure.users.model;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Data
-
+@Entity
+@Table(name = "users")
 public class Users {
 
     public Users() {
@@ -21,8 +22,12 @@ public class Users {
         this.age = age;
     }
 
+    @Id
     private long id;
+
+    @Column(name = "first_name")
     private String fistName;
+
     private String email;
     private int age;
 
